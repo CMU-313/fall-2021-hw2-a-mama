@@ -406,6 +406,11 @@ a i {
     color: #fff;
 }
 
+.biggerpls {
+    height: 60px;
+    width: 60px;
+}
+
 .btn-list > .btn {
     margin-bottom: 2px;
 }
