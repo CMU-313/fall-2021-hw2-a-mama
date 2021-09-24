@@ -306,6 +306,26 @@ class UserListView(SingleObjectListView):
             'title': _('Users'),
         }
 
+class ReviewersListView(SingleObjectListView):
+    object_permission = permission_user_view
+    source_queryset = get_user_queryset()
+
+    def get_extra_context(self):
+        return {
+            'hide_link': True,
+            'hide_object': True,
+            'no_results_icon': icon_user_setup,
+            'no_results_main_link': link_user_create.resolve(
+                context=RequestContext(request=self.request)
+            ),
+            'no_results_text': _(
+                'Reviewer accounts can be create from this view. After creating '
+                'a reviewer account you will prompted to set a password for it. '
+            ),
+            'no_results_title': _('There are no reviewer accounts yet'),
+            'title': _('Reviewers'),
+        }
+
 
 class UserOptionsEditView(ExternalObjectViewMixin, SingleObjectEditView):
     external_object_permission = permission_user_edit
