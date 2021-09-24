@@ -67,6 +67,10 @@ link_reviewer_create = Link(
     icon=icon_user_create, permissions=(permission_user_create,),
     text=_('Invite a new reviewer'), view='user_management:reviewer_create'
 )
+link_reviewers_list = Link(
+    icon=icon_user_list, text=_('Reviewers'),
+    view='user_management:reviewer_list'
+)
 link_user_delete = Link(
     args='object.id', icon=icon_user_delete,
     permissions=(permission_user_delete,), tags='dangerous',

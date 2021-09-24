@@ -10,7 +10,7 @@ from mayan.apps.common.apps import MayanAppConfig
 from mayan.apps.common.classes import ModelCopy
 from mayan.apps.common.menus import (
     menu_list_facet, menu_multi_item, menu_object, menu_related,
-    menu_secondary, menu_setup, menu_user
+    menu_secondary, menu_setup, menu_user, menu_main
 )
 from mayan.apps.dashboards.dashboards import dashboard_main
 from mayan.apps.events.classes import EventModelRegistry, ModelEventType
@@ -35,7 +35,7 @@ from .links import (
     link_group_setup, link_user_create, link_user_delete, link_user_edit,
     link_user_group_list, link_user_list, link_user_multiple_delete,
     link_user_set_options, link_user_setup, separator_user_label,
-    text_user_label
+    text_user_label, link_reviewers_list
 )
 from .methods import (
     get_method_group_init, get_method_group_save, get_method_user_init,
@@ -255,6 +255,8 @@ class UserManagementApp(MayanAppConfig):
             links=(link_user_multiple_delete,),
             sources=('user_management:user_list',)
         )
+        menu_main.bind_links(links=(link_reviewers_list,), position=98)
+
         menu_object.bind_links(
             links=(link_group_edit,),
             sources=(Group,)
