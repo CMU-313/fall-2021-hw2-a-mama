@@ -167,6 +167,26 @@ class UserCreateView(SingleObjectCreateView):
     def get_instance_extra_data(self):
         return {'_event_actor': self.request.user}
 
+class ReviewerCreateView(SingleObjectCreateView):
+    extra_context = {
+        'title': _('Invite new reviewer'),
+    }
+    form_class = UserForm
+    view_permission = permission_user_create
+
+    def form_valid(self, form):
+        super().form_valid(form=form)
+        return HttpResponseRedirect(
+            reverse(
+                viewname='authentication:user_set_password', kwargs={
+                    'user_id': self.object.pk
+                }
+            )
+        )
+
+    def get_instance_extra_data(self):
+        return {'_event_actor': self.request.user}
+
 
 class UserDeleteView(MultipleObjectConfirmActionView):
     object_permission = permission_user_delete
