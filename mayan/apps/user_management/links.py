@@ -63,6 +63,10 @@ link_user_create = Link(
     icon=icon_user_create, permissions=(permission_user_create,),
     text=_('Create new user'), view='user_management:user_create'
 )
+link_reviewer_create = Link(
+    icon=icon_user_create, permissions=(permission_user_create,),
+    text=_('Invite a new reviewer'), view='user_management:user_create'
+)
 link_user_delete = Link(
     args='object.id', icon=icon_user_delete,
     permissions=(permission_user_delete,), tags='dangerous',

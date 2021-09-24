@@ -14,7 +14,7 @@ from mayan.apps.views.mixins import ExternalObjectViewMixin
 
 from .forms import UserForm
 from .icons import icon_group_setup, icon_user_setup
-from .links import link_group_create, link_user_create
+from .links import link_group_create, link_user_create, link_reviewer_create
 from .permissions import (
     permission_group_create, permission_group_delete, permission_group_edit,
     permission_group_view, permission_user_create, permission_user_delete,
@@ -315,7 +315,7 @@ class ReviewersListView(SingleObjectListView):
             'hide_link': True,
             'hide_object': True,
             'no_results_icon': icon_user_setup,
-            'no_results_main_link': link_user_create.resolve(
+            'no_results_main_link': link_reviewer_create.resolve(
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
