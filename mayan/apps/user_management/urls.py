@@ -9,7 +9,7 @@ from .views import (
     CurrentUserDetailsView, CurrentUserEditView, GroupCreateView,
     GroupDeleteView, GroupEditView, GroupListView, GroupUsersView,
     UserCreateView, UserDeleteView, UserDetailsView, UserEditView,
-    UserGroupsView, UserListView, UserOptionsEditView
+    UserGroupsView, UserListView, UserOptionsEditView, ReviewersListView
 )
 
 urlpatterns_current_user = [
@@ -47,6 +47,8 @@ urlpatterns_groups = [
 
 urlpatterns_users = [
     url(regex=r'^users/$', name='user_list', view=UserListView.as_view()),
+    url(regex=r'^reviewers/$', name='reviewer_list', view=ReviewersListView.as_view()),
+
     url(
         regex=r'^users/create/$', name='user_create',
         view=UserCreateView.as_view()

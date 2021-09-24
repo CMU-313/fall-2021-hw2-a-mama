@@ -319,7 +319,7 @@ class ReviewersListView(SingleObjectListView):
                 context=RequestContext(request=self.request)
             ),
             'no_results_text': _(
-                'Reviewer accounts can be create from this view. After creating '
+                'Reviewer accounts can be created from this view. After creating '
                 'a reviewer account you will prompted to set a password for it. '
             ),
             'no_results_title': _('There are no reviewer accounts yet'),
