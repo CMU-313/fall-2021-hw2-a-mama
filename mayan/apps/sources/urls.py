@@ -10,7 +10,7 @@ from .views import (
     SourceEditView, SourceListView, StagingFileDeleteView,
     DocumentFileUploadInteractiveView, UploadInteractiveView
 )
-from .wizards import DocumentCreateWizard
+from .wizards import DocumentCreateWizard, ImportApplication
 
 urlpatterns = [
     url(
@@ -23,6 +23,10 @@ urlpatterns = [
     url(
         regex=r'^documents/create/from/local/multiple/$',
         name='document_create_multiple', view=DocumentCreateWizard.as_view()
+    ),
+    url(
+        regex=r'^applications/create/from/local/multiple/$',
+        name='application_create_multiple', view=ImportApplication.as_view()
     ),
     url(
         regex=r'^documents/upload/new/interactive/(?P<source_id>\d+)/$',
