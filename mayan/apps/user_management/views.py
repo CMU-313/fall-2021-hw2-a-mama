@@ -177,8 +177,9 @@ class ReviewerCreateView(SingleObjectCreateView):
 
     def form_valid(self, form):
         super().form_valid(form=form)
-        c = Cabinet(label="Anuda")
-        c.save()
+        #automatically create a cabinet with reviewer's name
+        cabinet = Cabinet(label=self.object.first_name + ' ' +self.object.last_name)
+        cabinet.save()
         return HttpResponseRedirect(
             reverse(
                 viewname='authentication:user_set_password', kwargs={
