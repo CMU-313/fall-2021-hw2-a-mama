@@ -1,3 +1,4 @@
+from mayan.apps.cabinets.models import Cabinet
 from django.contrib import messages
 from django.contrib.auth.models import Group
 from django.http import HttpResponseRedirect
@@ -176,6 +177,8 @@ class ReviewerCreateView(SingleObjectCreateView):
 
     def form_valid(self, form):
         super().form_valid(form=form)
+        c = Cabinet(label="Anuda")
+        c.save()
         return HttpResponseRedirect(
             reverse(
                 viewname='authentication:user_set_password', kwargs={
