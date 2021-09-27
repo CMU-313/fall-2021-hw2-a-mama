@@ -63,6 +63,24 @@ link_user_create = Link(
     icon=icon_user_create, permissions=(permission_user_create,),
     text=_('Create new user'), view='user_management:user_create'
 )
+link_reviewer_create = Link(
+    icon=icon_user_create, permissions=(permission_user_create,),
+    text=_('Invite a new reviewer'), view='user_management:reviewer_create'
+)
+link_reviewers_list = Link(
+    condition=get_cascade_condition(
+        app_label='cabinets', model_name='Cabinet',
+        object_permission=permission_user_view,
+    ), icon=icon_user_list,
+    text=_('All Reviewers'), view='user_management:reviewer_list'
+)
+link_new_reviewer = Link(
+    condition=get_cascade_condition(
+        app_label='cabinets', model_name='Cabinet',
+        object_permission=permission_user_create,
+    ), icon=icon_user_create,
+    text=_('Invite Reviewer'), view='user_management:reviewer_create'
+)
 link_user_delete = Link(
     args='object.id', icon=icon_user_delete,
     permissions=(permission_user_delete,), tags='dangerous',
@@ -104,6 +122,7 @@ link_user_setup = Link(
     ), icon=icon_user_setup, text=_('Users'),
     view='user_management:user_list'
 )
+
 separator_user_label = Separator()
 text_user_label = Text(
     html_extra_classes='menu-user-name', text=get_user_label_text

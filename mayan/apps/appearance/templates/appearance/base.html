@@ -68,7 +68,8 @@
                                 {% else %}
                                     {% ifchanged menu_link_result.link_groups.0.object %}
                                         {% common_get_object_verbose_name obj=menu_link_result.link_groups.0.object as link_group_object_verbose_name %}
-                                        <li class="dropdown-header">{% if link_group_object_verbose_name %}{{ link_group_object_verbose_name }}{% else %}{% trans 'Object' %}{% endif %}</li>
+                                        {% comment %} <li class="dropdown-header">{% if link_group_object_verbose_name %}{{ link_group_object_verbose_name }}{% else %}{% trans 'Object' %}{% endif %}</li> {% endcomment %}
+                                        <li class="dropdown-header">HERE</li>
                                     {% endifchanged %}
                                 {% endif %}
                             {% else %}

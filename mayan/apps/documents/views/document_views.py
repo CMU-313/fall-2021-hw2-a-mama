@@ -67,7 +67,11 @@ class DocumentListView(SingleObjectListView):
         queryset = ModelQueryFields.get(model=Document).get_queryset()
         return self.get_document_queryset().filter(pk__in=queryset)
 
+
 class ApplicationListView(SingleObjectListView):
+
+class ApplicationDashboardView(SingleObjectListView):
+
     object_permission = permission_document_view
 
     def get_context_data(self, **kwargs):
@@ -76,7 +80,11 @@ class ApplicationListView(SingleObjectListView):
         except Exception as exception:
             messages.error(
                 message=_(
+
                     'Error retrieving document list: %(exception)s.'
+
+                    'Error retrieving application list: %(exception)s.'
+
                 ) % {
                     'exception': exception
                 }, request=self.request
@@ -94,12 +102,21 @@ class ApplicationListView(SingleObjectListView):
             'list_as_items': True,
             'no_results_icon': icon_document_list,
             'no_results_text': _(
+
                 'This could mean that no documents have been uploaded or '
                 'that your user account has not been granted the view '
                 'permission for any document or document type.'
             ),
             'no_results_title': _('No documents available'),
             'title': _('All documents'),
+
+                'This could mean that no applications have been uploaded or '
+                'that your user account has not been granted the view '
+                'permission for any application.'
+            ),
+            'no_results_title': _('No applications available'),
+            'title': _('Application Dashboard'),
+
         }
 
     def get_source_queryset(self):

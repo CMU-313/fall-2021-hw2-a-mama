@@ -11,8 +11,8 @@ from .permissions import permission_group_view, permission_user_view
 
 class DashboardWidgetUserTotal(DashboardWidgetNumeric):
     icon = icon_user_list
-    label = _('Total users')
-    link = reverse_lazy(viewname='user_management:user_list')
+    label = _('Total reviewers')
+    link = reverse_lazy(viewname='user_management:reviewer_list')
 
     def render(self, request):
         AccessControlList = apps.get_model(

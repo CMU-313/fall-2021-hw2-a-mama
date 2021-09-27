@@ -32,6 +32,10 @@ link_check_out_list = Link(
     icon=icon_check_out_info, text=_('Checkouts'),
     view='checkouts:check_out_list'
 )
+link_check_out_TEMP = Link(
+    icon=icon_check_out_info, text=_('Application Dashboard'),
+    view='checkouts:check_out_list'
+)
 link_check_out_document = Link(
     args='object.pk', condition=is_not_checked_out,
     icon=icon_check_out_document,

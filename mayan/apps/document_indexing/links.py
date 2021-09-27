@@ -42,6 +42,7 @@ link_index_instance_menu = Link(
     ), icon=icon_index,
     text=_('Indexes'), view='indexing:index_list'
 )
+
 link_index_instance_rebuild = Link(
     args='resolved_object.pk', icon=icon_index_instances_rebuild,
     permissions=(permission_index_template_rebuild,),

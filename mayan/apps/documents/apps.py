@@ -12,7 +12,7 @@ from mayan.apps.common.classes import (
 )
 from mayan.apps.common.menus import (
     menu_facet, menu_list_facet, menu_main, menu_object, menu_return,
-    menu_secondary, menu_setup, menu_multi_item
+    menu_secondary, menu_setup, menu_multi_item, menu_main
 )
 from mayan.apps.common.signals import signal_post_initial_setup
 from mayan.apps.converter.classes import AppImageErrorImage
@@ -82,7 +82,11 @@ from .links.document_links import (
     link_document_type_change, link_document_properties_edit,
     link_document_list, link_document_recently_accessed_list,
     link_document_recently_created_list, link_document_multiple_type_change,
+
     link_document_preview, link_document_properties, link_document_assign_for_review
+
+    link_document_preview, link_document_properties, link_document_updateStatus,
+    link_application_dashboard
 )
 from .links.document_file_links import (
     link_document_file_delete, link_document_file_delete_multiple,
@@ -697,11 +701,17 @@ class DocumentsApp(MayanAppConfig):
             links=(
                 link_document_recently_accessed_list,
                 link_document_recently_created_list, link_document_list_favorites,
-                link_document_list, link_document_list_deleted
+                link_document_list, link_document_list_deleted,
             )
         )
 
+
         menu_main.bind_links(links=(menu_documents, link_document_assign_for_review), position=0)
+
+        menu_main.bind_links(links=(menu_documents,), position=0)
+        menu_main.bind_links(links=(link_application_dashboard,), position=108)
+        
+
 
         menu_setup.bind_links(links=(link_document_type_setup,))
 
@@ -712,6 +722,9 @@ class DocumentsApp(MayanAppConfig):
         )
         menu_facet.bind_links(
             links=(link_document_preview,), sources=(Document,), position=0
+        )
+        menu_facet.bind_links(
+            links=(link_document_updateStatus,), sources=(Document,), position=4
         )
         menu_facet.bind_links(
             links=(link_document_properties,), sources=(Document,), position=2
