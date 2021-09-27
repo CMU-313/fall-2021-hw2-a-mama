@@ -45,6 +45,10 @@ link_document_multiple_cabinet_add = Link(
     icon=icon_document_multiple_cabinet_add, text=_('Add to cabinets'),
     view='cabinets:document_multiple_cabinet_add'
 )
+link_document_assign_reviewer = Link(
+    icon=icon_document_multiple_cabinet_add, text=_('Assign for Review'),
+    view='cabinets:document_multiple_cabinet_add'
+)
 link_multiple_document_cabinet_remove = Link(
     icon=icon_document_cabinet_remove, text=_('Remove from cabinets'),
     view='cabinets:multiple_document_cabinet_remove'

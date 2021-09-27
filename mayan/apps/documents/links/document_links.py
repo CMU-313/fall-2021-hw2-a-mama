@@ -27,9 +27,15 @@ link_document_list = Link(
     icon=icon_document_list,
     text=_('All documents'), view='documents:document_list'
 )
+
+link_document_assign_for_review = Link(
+    icon=icon_document_list, 
+    text=_('Assign For Review'), view='documents:application_list'
+
 link_application_dashboard = Link(
     icon=icon_document_list,
     text=_('Applications'), view='documents:application_dashboard'
+
 )
 link_document_recently_accessed_list = Link(
     icon=icon_document_recently_accessed_list, text=_('Recently accessed'),

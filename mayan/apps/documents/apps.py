@@ -82,6 +82,9 @@ from .links.document_links import (
     link_document_type_change, link_document_properties_edit,
     link_document_list, link_document_recently_accessed_list,
     link_document_recently_created_list, link_document_multiple_type_change,
+
+    link_document_preview, link_document_properties, link_document_assign_for_review
+
     link_document_preview, link_document_properties, link_document_updateStatus,
     link_application_dashboard
 )
@@ -702,9 +705,13 @@ class DocumentsApp(MayanAppConfig):
             )
         )
 
+
+        menu_main.bind_links(links=(menu_documents, link_document_assign_for_review), position=0)
+
         menu_main.bind_links(links=(menu_documents,), position=0)
         menu_main.bind_links(links=(link_application_dashboard,), position=108)
         
+
 
         menu_setup.bind_links(links=(link_document_type_setup,))
 
