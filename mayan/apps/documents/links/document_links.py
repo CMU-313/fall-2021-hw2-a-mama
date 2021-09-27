@@ -7,8 +7,14 @@ from ..icons import (
     icon_document_preview, icon_document_properties,
     icon_document_type_change, icon_document_recently_created_list
 )
+from mayan.apps.cabinets.icons import (
+    icon_cabinet_view
+)
 from ..permissions import (
     permission_document_properties_edit, permission_document_view
+)
+from mayan.apps.cabinets.permissions import (
+    permission_cabinet_view
 )
 
 
@@ -41,6 +47,11 @@ link_document_preview = Link(
     args='resolved_object.id', icon=icon_document_preview,
     permissions=(permission_document_view,), text=_('Preview'),
     view='documents:document_preview'
+)
+link_document_updateStatus = Link(
+    args='resolved_object.id', icon=icon_cabinet_view,
+    permissions=(permission_cabinet_view,), text=_('Update Status'),
+    view='cabinets:document_cabinet_add'
 )
 link_document_properties = Link(
     args='resolved_object.id', icon=icon_document_properties,
