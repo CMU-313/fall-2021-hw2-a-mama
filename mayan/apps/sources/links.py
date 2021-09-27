@@ -141,3 +141,8 @@ link_setup_source_check_now = Link(
     permissions=(permission_sources_setup_view,), text=_('Check now'),
     view='sources:setup_source_check',
 )
+link_application_create_multiple = Link(
+    condition=condition_document_creation_access,
+    icon=icon_document_file_upload, text=_('Import Applications'),
+    view='sources:application_create_multiple'
+)
