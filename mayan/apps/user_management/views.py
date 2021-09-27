@@ -1,3 +1,4 @@
+from mayan.apps.cabinets.models import Cabinet
 from django.contrib import messages
 from django.contrib.auth.models import Group
 from django.http import HttpResponseRedirect
@@ -14,7 +15,7 @@ from mayan.apps.views.mixins import ExternalObjectViewMixin
 
 from .forms import UserForm
 from .icons import icon_group_setup, icon_user_setup
-from .links import link_group_create, link_user_create
+from .links import link_group_create, link_user_create, link_reviewer_create
 from .permissions import (
     permission_group_create, permission_group_delete, permission_group_edit,
     permission_group_view, permission_user_create, permission_user_delete,
@@ -167,6 +168,29 @@ class UserCreateView(SingleObjectCreateView):
     def get_instance_extra_data(self):
         return {'_event_actor': self.request.user}
 
+class ReviewerCreateView(SingleObjectCreateView):
+    extra_context = {
+        'title': _('Invite new reviewer'),
+    }
+    form_class = UserForm
+    view_permission = permission_user_create
+
+    def form_valid(self, form):
+        super().form_valid(form=form)
+        #automatically create a cabinet with reviewer's name
+        cabinet = Cabinet(label=self.object.first_name + ' ' +self.object.last_name)
+        cabinet.save()
+        return HttpResponseRedirect(
+            reverse(
+                viewname='authentication:user_set_password', kwargs={
+                    'user_id': self.object.pk
+                }
+            )
+        )
+
+    def get_instance_extra_data(self):
+        return {'_event_actor': self.request.user}
+
 
 class UserDeleteView(MultipleObjectConfirmActionView):
     object_permission = permission_user_delete
@@ -304,6 +328,26 @@ class UserListView(SingleObjectListView):
             ),
             'no_results_title': _('There are no user accounts'),
             'title': _('Users'),
+        }
+
+class ReviewersListView(SingleObjectListView):
+    object_permission = permission_user_view
+    source_queryset = get_user_queryset()
+
+    def get_extra_context(self):
+        return {
+            'hide_link': True,
+            'hide_object': True,
+            'no_results_icon': icon_user_setup,
+            'no_results_main_link': link_reviewer_create.resolve(
+                context=RequestContext(request=self.request)
+            ),
+            'no_results_text': _(
+                'Reviewer accounts can be created from this view. After creating '
+                'a reviewer account you will prompted to set a password for it. '
+            ),
+            'no_results_title': _('There are no reviewer accounts yet'),
+            'title': _('Reviewers'),
         }
 
 
