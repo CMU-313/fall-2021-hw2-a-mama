@@ -85,3 +85,6 @@ at: https://docs.mayan-edms.com/parts/installation.html
 - [Translations](https://www.transifex.com/rosarior/mayan-edms/)
 - [Videos](https://www.youtube.com/channel/UCJOOXHP1MJ9lVA7d8ZTlHPw)
 
+<h2 align="center">Where to find HW 2 Group 6 Documentation</h2>
+- A document called "CI_script" can be found in the high-level "fall-2021-hw2-a-mama" directory. It contains steps for manual CI testing for each of the features that Group 6 implemented.
+
