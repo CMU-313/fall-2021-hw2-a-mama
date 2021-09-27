@@ -73,7 +73,7 @@ from .views.document_version_views import (
 )
 from .views.document_views import (
     DocumentTypeChangeView, DocumentListView, DocumentPreviewView,
-    DocumentPropertiesEditView, DocumentPropertiesView
+    DocumentPropertiesEditView, DocumentPropertiesView, ApplicationDashboardView
 )
 from .views.favorite_document_views import (
     FavoriteAddView, FavoriteDocumentListView, FavoriteRemoveView
@@ -409,6 +409,10 @@ urlpatterns_documents = [
     url(
         regex=r'^documents/$', name='document_list',
         view=DocumentListView.as_view()
+    ),
+    url(
+        regex=r'^applications/$', name='application_dashboard',
+        view=ApplicationDashboardView.as_view()
     ),
     url(
         regex=r'^documents/recently/accessed/$',
