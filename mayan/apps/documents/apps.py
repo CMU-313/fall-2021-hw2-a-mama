@@ -707,8 +707,6 @@ class DocumentsApp(MayanAppConfig):
 
 
         menu_main.bind_links(links=(menu_documents, link_document_assign_for_review), position=0)
-
-        menu_main.bind_links(links=(menu_documents,), position=0)
         menu_main.bind_links(links=(link_application_dashboard,), position=108)
         
 
