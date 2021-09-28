@@ -8,3 +8,8 @@ menu_documents = Menu(
     icon=icon_menu_documents, label=_('Documents'),
     name='documents'
 )
+
+menu_applications = Menu(
+    icon=icon_menu_documents, label=_('Applications'),
+    name='applications'
+)

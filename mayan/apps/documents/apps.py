@@ -161,7 +161,7 @@ from .links.trashed_document_links import (
 from .literals import (
     IMAGE_ERROR_NO_ACTIVE_VERSION, IMAGE_ERROR_NO_VERSION_PAGES
 )
-from .menus import menu_documents
+from .menus import menu_documents, menu_applications
 
 # Documents
 
@@ -704,9 +704,17 @@ class DocumentsApp(MayanAppConfig):
                 link_document_list, link_document_list_deleted,
             )
         )
+        menu_applications.bind_links(
+            links=(
+                link_document_recently_accessed_list,
+                link_document_recently_created_list, link_document_list_favorites,
+                link_document_list, link_document_list_deleted,
+            )
+        )
 
 
         menu_main.bind_links(links=(menu_documents, link_document_assign_for_review), position=0)
+        menu_main.bind_links(links=(menu_applications,), position=107)
         menu_main.bind_links(links=(link_application_dashboard,), position=108)
         
 
