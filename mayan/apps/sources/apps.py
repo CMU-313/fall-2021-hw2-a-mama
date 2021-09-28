@@ -111,8 +111,6 @@ class SourcesApp(MayanAppConfig):
             )
         )
 
-        menu_main.bind_links(links=(link_application_create_multiple,), position=108)
-
         menu_documents.bind_links(links=(link_document_create_multiple,))
 
         menu_list_facet.bind_links(

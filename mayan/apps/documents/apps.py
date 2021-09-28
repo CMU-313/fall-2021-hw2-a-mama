@@ -33,6 +33,8 @@ from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import AJAXTemplate
 from mayan.apps.views.html_widgets import TwoStateWidget
 
+from mayan.apps.sources.links import link_application_create_multiple
+
 from .dashboard_widgets import (
     DashboardWidgetDocumentFilePagesTotal, DashboardWidgetDocumentsInTrash,
     DashboardWidgetDocumentsNewThisMonth,
@@ -83,7 +85,7 @@ from .links.document_links import (
     link_document_list, link_document_recently_accessed_list,
     link_document_recently_created_list, link_document_multiple_type_change,
 
-    link_document_preview, link_document_properties, link_document_assign_for_review
+    link_document_preview, link_document_properties, link_document_assign_for_review,
 
     link_document_preview, link_document_properties, link_document_updateStatus,
     link_application_dashboard
@@ -161,7 +163,7 @@ from .links.trashed_document_links import (
 from .literals import (
     IMAGE_ERROR_NO_ACTIVE_VERSION, IMAGE_ERROR_NO_VERSION_PAGES
 )
-from .menus import menu_documents
+from .menus import menu_documents, menu_applications
 
 # Documents
 
@@ -704,12 +706,14 @@ class DocumentsApp(MayanAppConfig):
                 link_document_list, link_document_list_deleted,
             )
         )
-
-
-        menu_main.bind_links(links=(menu_documents, link_document_assign_for_review), position=0)
-
+        menu_applications.bind_links(
+            links=(
+                link_application_dashboard, link_application_create_multiple,
+                link_document_assign_for_review,
+            )
+        )
         menu_main.bind_links(links=(menu_documents,), position=0)
-        menu_main.bind_links(links=(link_application_dashboard,), position=108)
+        menu_main.bind_links(links=(menu_applications,), position=107)
         
 
 

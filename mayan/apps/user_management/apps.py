@@ -262,10 +262,10 @@ class UserManagementApp(MayanAppConfig):
         )
         menu_reviewers.bind_links(
             links=(
-                link_reviewers_list, link_new_reviewer
+                link_reviewers_list, link_new_reviewer,
             )
         )
-        menu_main.bind_links(links=(menu_reviewers,), position=98)
+        menu_main.bind_links(links=(menu_reviewers,), position=110)
 
         menu_object.bind_links(
             links=(link_group_edit,),
