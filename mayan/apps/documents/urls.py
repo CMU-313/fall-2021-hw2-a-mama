@@ -416,7 +416,6 @@ urlpatterns_documents = [
         view=DocumentListView.as_view()
     ),
     url(
-
         regex=r'^applications/$', name='application_list',
         view=ApplicationListView.as_view()
     ),

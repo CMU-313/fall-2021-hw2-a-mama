@@ -68,17 +68,11 @@ link_reviewer_create = Link(
     text=_('Invite a new reviewer'), view='user_management:reviewer_create'
 )
 link_reviewers_list = Link(
-    condition=get_cascade_condition(
-        app_label='cabinets', model_name='Cabinet',
-        object_permission=permission_user_view,
-    ), icon=icon_user_list,
+    icon=icon_user_list,
     text=_('All Reviewers'), view='user_management:reviewer_list'
 )
 link_new_reviewer = Link(
-    condition=get_cascade_condition(
-        app_label='cabinets', model_name='Cabinet',
-        object_permission=permission_user_create,
-    ), icon=icon_user_create,
+    icon=icon_user_create,
     text=_('Invite Reviewer'), view='user_management:reviewer_create'
 )
 link_user_delete = Link(
