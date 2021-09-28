@@ -74,7 +74,7 @@ from .views.document_version_views import (
 from .views.document_views import (
 
     ApplicationListView, DocumentTypeChangeView, DocumentListView, DocumentPreviewView,
-    DocumentPropertiesEditView, DocumentPropertiesView
+    DocumentPropertiesEditView, DocumentPropertiesView,
 
     DocumentTypeChangeView, DocumentListView, DocumentPreviewView,
     DocumentPropertiesEditView, DocumentPropertiesView, ApplicationDashboardView
@@ -419,10 +419,10 @@ urlpatterns_documents = [
 
         regex=r'^applications/$', name='application_list',
         view=ApplicationListView.as_view()
-
+    ),
+    url(
         regex=r'^applications/$', name='application_dashboard',
         view=ApplicationDashboardView.as_view()
-
     ),
     url(
         regex=r'^documents/recently/accessed/$',

@@ -83,7 +83,7 @@ from .links.document_links import (
     link_document_list, link_document_recently_accessed_list,
     link_document_recently_created_list, link_document_multiple_type_change,
 
-    link_document_preview, link_document_properties, link_document_assign_for_review
+    link_document_preview, link_document_properties, link_document_assign_for_review,
 
     link_document_preview, link_document_properties, link_document_updateStatus,
     link_application_dashboard
