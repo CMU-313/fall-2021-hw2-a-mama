@@ -33,6 +33,8 @@ from mayan.apps.rest_api.fields import DynamicSerializerField
 from mayan.apps.templating.classes import AJAXTemplate
 from mayan.apps.views.html_widgets import TwoStateWidget
 
+from mayan.apps.sources.links import link_application_create_multiple
+
 from .dashboard_widgets import (
     DashboardWidgetDocumentFilePagesTotal, DashboardWidgetDocumentsInTrash,
     DashboardWidgetDocumentsNewThisMonth,
@@ -706,16 +708,13 @@ class DocumentsApp(MayanAppConfig):
         )
         menu_applications.bind_links(
             links=(
-                link_document_recently_accessed_list,
-                link_document_recently_created_list, link_document_list_favorites,
-                link_document_list, link_document_list_deleted,
+                link_application_dashboard, link_application_create_multiple,
             )
         )
 
 
         menu_main.bind_links(links=(menu_documents, link_document_assign_for_review), position=0)
         menu_main.bind_links(links=(menu_applications,), position=107)
-        menu_main.bind_links(links=(link_application_dashboard,), position=108)
         
 
 

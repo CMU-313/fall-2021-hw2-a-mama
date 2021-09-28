@@ -34,8 +34,8 @@ link_document_assign_for_review = Link(
 
 link_application_dashboard = Link(
     icon=icon_document_list,
-    text=_('Applications'), view='documents:application_dashboard')
-    
+    text=_('Application Dashboard'), view='documents:application_dashboard')
+
 link_document_recently_accessed_list = Link(
     icon=icon_document_recently_accessed_list, text=_('Recently accessed'),
     view='documents:document_recently_accessed_list'
