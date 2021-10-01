@@ -43,4 +43,12 @@ Follow the steps below to test the newly implemented features.
 5. Select the reviewer you would like to assign the applications to using the drop down
 6. Verify that the assignment was successful by checking that the assigned reviewer's name is listed below the application.
 
-## 4. Updating the review status of an application
+## 4. View applications assigned and update status(as a reviewer)
+
+1. Log in to Mayan using the credentials provided by the admin in step 2
+2. Click on applications>application dashboard
+3. Applications assigned to you will display your name in the document card
+4. Go into preview view by clicking on the document’s name
+5. On the right sidebar, click on ‘Update Status’
+6. Assign the document to either the ‘In Progress’ or ‘Completed’ cabinet
+7. Verify that the status was updated by visiting the application dashboard and checking the application card.
