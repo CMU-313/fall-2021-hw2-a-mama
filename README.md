@@ -1,3 +1,7 @@
+<h2 align="center">Where to find HW 2 Group 6 Documentation</h2>
+- A markdown file called "CI_script" can be found in the high-level "fall-2021-hw2-a-mama" directory. It contains steps for manual CI testing for each of the features that Group 6 implemented.
+<br><br>
+
 [![pypi][pypi]][pypi-url]
 ![python][python]
 ![license][license]
@@ -8,22 +12,16 @@
 [![Store](https://img.shields.io/badge/Online_store-black)](https://teespring.com/stores/mayan-edms)
 [![Donation](https://img.shields.io/badge/donation-PayPal-brightgreen)](https://paypal.me/MayanEDMS)
 
-
 [pypi]: https://img.shields.io/pypi/v/mayan-edms.svg
 [pypi-url]: https://pypi.org/project/mayan-edms/
-
 [builds]: https://gitlab.com/mayan-edms/mayan-edms/badges/master/build.svg
 [builds-url]: https://gitlab.com/mayan-edms/mayan-edms/pipelines
-
 [python]: https://img.shields.io/pypi/pyversions/mayan-edms.svg
 [python-url]: https://img.shields.io/pypi/l/mayan-edms.svg?style=flat
-
 [license]: https://img.shields.io/pypi/l/mayan-edms.svg?style=flat
 [license-url]: https://gitlab.com/mayan-edms/mayan-edms/blob/master/LICENSE
-
-[commits]:  https://img.shields.io/github/commit-activity/y/mayan-edms/mayan-edms.svg
+[commits]: https://img.shields.io/github/commit-activity/y/mayan-edms/mayan-edms.svg
 [commits-url]: https://gitlab.com/mayan-edms/mayan-edms/
-
 [support]: https://img.shields.io/badge/Get_support-brightgreen
 [support-url]: https://www.mayan-edms.com/support/
 
@@ -75,7 +73,6 @@ at: https://docs.mayan-edms.com/parts/installation.html
 
 <h2 align="center">Important links</h2>
 
-
 - [Homepage](http://www.mayan-edms.com)
 - [Documentation](https://docs.mayan-edms.com)
 - [Contributing](https://gitlab.com/mayan-edms/mayan-edms/blob/master/CONTRIBUTING.md)
@@ -84,7 +81,3 @@ at: https://docs.mayan-edms.com/parts/installation.html
 - [Plug-ins, other related projects](https://gitlab.com/mayan-edms/)
 - [Translations](https://www.transifex.com/rosarior/mayan-edms/)
 - [Videos](https://www.youtube.com/channel/UCJOOXHP1MJ9lVA7d8ZTlHPw)
-
-<h2 align="center">Where to find HW 2 Group 6 Documentation</h2>
-- A document called "CI_script" can be found in the high-level "fall-2021-hw2-a-mama" directory. It contains steps for manual CI testing for each of the features that Group 6 implemented.
-
