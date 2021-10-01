@@ -13,6 +13,16 @@ Follow the steps below to test the newly implemented features.
 
 ## 2. Inviting Reviewers
 
+1. Click on the reviewers tab on the main menu sidebar
+2. Click on the invite reviewer menu item
+3. Fill in the form using the reviewer’s credentials
+4. After submitting, you should be prompted to set a password for the reviewer
+5. Fill out the password creation form
+6. Click on the All Reviewers menu item in the main menu sidebar(under Reviewers)
+7. Verify that the newly created reviewer is listed in the reviewers list and that the total counter reflects the change
+8. Log out and attempt to login using the reviewer credentials that were just created
+9. Share the newly created reviewer credentials with the relevant reviewer
+
 ## 3. Assigning applications to reviewers
 
 ## 4. Updating the review status of an application
