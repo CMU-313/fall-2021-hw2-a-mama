@@ -2,6 +2,17 @@
 
 Follow the steps below to test the newly implemented features.
 
+## Initial Setup
+
+1. Log in to Mayan using the provided admin credentials
+2. Click on Cabinets>Create Cabinets
+3. Create Cabinets called "In Progress" and "Completed"
+4. Verify that the cabinets were created successfully by checking the Cabinets list at Cabinets>All
+5. Navigate to the Mayan home page
+6. Click on 'View details' associated with the Document types card
+7. Click on actions>create document type
+8. Create a new document type called "Application"
+
 ## 1. Importing Applications for Review
 
 1. Log in to Mayan using the provided admin credentials
