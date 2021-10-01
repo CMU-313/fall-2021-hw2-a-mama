@@ -25,4 +25,11 @@ Follow the steps below to test the newly implemented features.
 
 ## 3. Assigning applications to reviewers
 
+1. Click on the applications tab on the main menu sidebar
+2. Click on the Assign for review menu item
+3. Select the applications you would like to assign
+4. Click on the bulk actions drop down and select "Assign for review"
+5. Select the reviewer you would like to assign the applications to using the drop down
+6. Verify that the assignment was successful by checking that the assigned reviewer's name is listed below the application.
+
 ## 4. Updating the review status of an application
